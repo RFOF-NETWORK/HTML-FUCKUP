@@ -637,10 +637,13 @@ HTML
 # 10. Alle HTML‑Elemente
 
 ## Paarige Elemente
+```
 a, abbr, address, article, aside, audio, b, bdi, bdo, blockquote, body, button, canvas, caption, cite, code, colgroup, data, datalist, dd, del, details, dfn, dialog, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1–h6, head, header, html, i, iframe, ins, kbd, label, legend, li, main, map, mark, menu, meter, nav, noscript, object, ol, optgroup, option, output, p, picture, pre, progress, q, rp, rt, ruby, s, samp, script, section, select, small, span, strong, style, sub, summary, sup, table, tbody, td, template, textarea, tfoot, th, thead, time, title, tr, u, ul, var, video
-
+```
 ## Unpaarige Elemente
+```
 area, base, br, col, embed, hr, img, input, link, meta, param, source, track, wbr
+```
 
 ## Tabelle: Elementtypen
 | Typ | Beispiele | Inhalt |
