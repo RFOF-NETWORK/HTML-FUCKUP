@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML – 10 Kapitel System</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.5; margin: 2rem; }
+    h1, h2, h3 { margin-top: 1.5rem; }
+    table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
+    th, td { border: 1px solid #444; padding: 0.4rem 0.6rem; text-align: left; }
+    code { background: #f3f3f3; padding: 0.1rem 0.3rem; }
+    section { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+
+  <h1>HTML – Grundsystem in 10 Kapiteln</h1>
+
+  <!-- Kapitel 1 -->
+  <section id="kapitel-1">
+    <h2>1. Die zwei Grundformen von HTML‑Elementen</h2>
+
+    <h3>1.1 Paarige Elemente</h3>
+    <p>Syntax: <code>&lt;element&gt; … &lt;/element&gt;</code></p>
+    <ul>
+      <li>Start‑Tag und End‑Tag</li>
+      <li>können Inhalt enthalten</li>
+      <li>bilden DOM‑Knoten mit Kindern</li>
+    </ul>
+    <p>Beispiele: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;span&gt;</code></p>
+
+    <h3>1.2 Unpaarige Elemente</h3>
+    <p>Syntax: <code>&lt;element&gt;</code></p>
+    <ul>
+      <li>kein End‑Tag</li>
+      <li>kein Inhalt</li>
+      <li>sofort abgeschlossener DOM‑Knoten</li>
+    </ul>
+    <p>Beispiele: <code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;input&gt;</code></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Eigenschaft</th>
+          <th>Paarig</th>
+          <th>Unpaarig</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Start‑Tag</td>
+          <td>ja</td>
+          <td>ja</td>
+        </tr>
+        <tr>
+          <td>End‑Tag</td>
+          <td>ja</td>
+          <td>nein</td>
+        </tr>
+        <tr>
+          <td>Inhalt möglich</td>
+          <td>ja</td>
+          <td>nein</td>
+        </tr>
+        <tr>
+          <td>DOM‑Kinder</td>
+          <td>ja</td>
+          <td>nein</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Kapitel 2 -->
+  <section id="kapitel-2">
+    <h2>2. Erweiterte Grundformen mit Attributen</h2>
+
+    <h3>2.1 Paarige Elemente mit Attributen</h3>
+    <p>Beispiel: <code>&lt;p id="intro" class="lead"&gt;Text&lt;/p&gt;</code></p>
+
+    <h3>2.2 Unpaarige Elemente mit Attributen</h3>
+    <p>Beispiel: <code>&lt;img src="bild.png" alt="Beschreibung"&gt;</code></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Elementtyp</th>
+          <th>Attribute</th>
+          <th>Inhalt</th>
+          <th>Beispiel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paarig</td>
+          <td>ja</td>
+          <td>ja</td>
+          <td><code>&lt;p id="x"&gt;Hallo&lt;/p&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Unpaarig</td>
+          <td>ja</td>
+          <td>nein</td>
+          <td><code>&lt;img src="bild.png"&gt;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Kapitel 3 -->
+  <section id="kapitel-3">
+    <h2>3. Universelle Mechanismen aller HTML‑Elemente</h2>
+    <ul>
+      <li>Tagname</li>
+      <li>Attribute und globale Attribute</li>
+      <li>Event‑Attribute</li>
+      <li>DOM‑Knoten und Baumstruktur</li>
+      <li>Kategorien (Flow, Phrasing, Interactive …)</li>
+      <li>Inhaltstypen (Text, Phrasing Content …)</li>
+      <li>Verschachtelungsregeln</li>
+      <li>Parsing‑Verhalten</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Mechanismus</th>
+          <th>Rolle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tagname</td>
+          <td>Identität des Elements</td>
+        </tr>
+        <tr>
+          <td>Attribute</td>
+          <td>Konfiguration und Metadaten</td>
+        </tr>
+        <tr>
+          <td>DOM</td>
+          <td>Struktur im Dokumentbaum</td>
+        </tr>
+        <tr>
+          <td>Kategorie</td>
+          <td>semantische Einordnung</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Kapitel 4 -->
+  <section id="kapitel-4">
+    <h2>4. Mechanismen paariger Elemente</h2>
+    <p>Beispiele:</p>
+    <pre><code>&lt;div class="box"&gt;Inhalt&lt;/div&gt;
+&lt;p id="intro"&gt;Hallo&lt;/p&gt;
+&lt;h1 data-level="1"&gt;Titel&lt;/h1&gt;</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspekt</th>
+          <th>Bedeutung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Inhalt</td>
+          <td>Text oder weitere Elemente</td>
+        </tr>
+        <tr>
+          <td>DOM</td>
+          <td>Eltern‑ und Kindknoten</td>
+        </tr>
+        <tr>
+          <td>Semantik</td>
+          <td>z. B. Überschrift, Absatz, Abschnitt</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Kapitel 5 -->
+  <section id="kapitel-5">
+    <h2>5. Mechanismen unpaariger Elemente</h2>
+    <p>Beispiele:</p>
+    <pre><code>&lt;br&gt;
+&lt;img src="bild.png" alt="Beschreibung"&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;input type="text" placeholder="Name"&gt;</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>Aspekt</th>
+          <th>Bedeutung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Inhalt</td>
+          <td>kein eigener Inhalt</td>
+        </tr>
+        <tr>
+          <td>Funktion</td>
+          <td>z. B. Bild, Zeilenumbruch, Meta‑Info</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Kapitel 6 -->
+  <section id="kapitel-6">
+    <h2>6. Universelle Attribute</h2>
+    <ul>
+      <li><code>id</code>, <code>class</code>, <code>style</code></li>
+      <li><code>title</code>, <code>lang</code>, <code>dir</code></li>
+      <li><code>hidden</code>, <code>tabindex</code>, <code>draggable</code></li>
+      <li><code>data-*</code> für eigene Daten</li>
+    </ul>
+    <pre><code>&lt;div id="box" class="red" data-info="123"&gt;…&lt;/div&gt;
+&lt;br class="spacer"&gt;
+&lt;img src="x.png" draggable="false"&gt;</code></pre>
+  </section>
+
+  <!-- Kapitel 7 -->
+  <section id="kapitel-7">
+    <h2>7. Universelle Event‑Attribute</h2>
+    <ul>
+      <li><code>onclick</code>, <code>ondblclick</code></li>
+      <li><code>onmouseover</code>, <code>onmouseout</code></li>
+      <li><code>onchange</code>, <code>oninput</code></li>
+      <li><code>onfocus</code>, <code>onblur</code></li>
+      <li><code>onkeydown</code>, <code>onkeyup</code>, <code>onload</code></li>
+    </ul>
+    <pre><code>&lt;h1 onclick="alert('Hi')"&gt;Titel&lt;/h1&gt;
+&lt;input oninput="console.log(this.value)"&gt;
+&lt;img src="x.png" onload="init()"&gt;</code></pre>
+  </section>
+
+  <!-- Kapitel 8 -->
+  <section id="kapitel-8">
+    <h2>8. Universelle Strukturregeln</h2>
+    <ul>
+      <li>jedes Element hat einen Tag‑Namen</li>
+      <li>jedes Element kann Attribute haben</li>
+      <li>jedes Element ist ein DOM‑Knoten</li>
+      <li>jedes Element gehört zu einer Kategorie</li>
+      <li>jedes Element hat erlaubte Eltern und Kinder</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Regel</th>
+          <th>Bedeutung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kategorie</td>
+          <td>z. B. Flow, Phrasing, Interactive</td>
+        </tr>
+        <tr>
+          <td>Eltern</td>
+          <td>welche Container erlaubt sind</td>
+        </tr>
+        <tr>
+          <td>Kinder</td>
+          <td>welche Inhalte erlaubt sind</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Kapitel 9 -->
+  <section id="kapitel-9">
+    <h2>9. Meta‑Ebene der HTML‑Struktur</h2>
+    <pre><code>HTML
+├── Struktur
+├── Mechanik
+├── Attribute
+├── Regeln
+└── Elemente</code></pre>
+    <p>Alle Teile des Systems greifen ineinander: Tags, Attribute, DOM, Kategorien, Parsing und Rendering.</p>
+  </section>
+
+  <!-- Kapitel 10 -->
+  <section id="kapitel-10">
+    <h2>10. Paarige und unpaarige HTML‑Elemente</h2>
+
+    <h3>10.1 Paarige Elemente (Auszug)</h3>
+    <p><code>a</code>, <code>abbr</code>, <code>article</code>, <code>aside</code>, <code>audio</code>, <code>div</code>, <code>p</code>, <code>h1</code>–<code>h6</code>, <code>section</code>, <code>span</code>, <code>ul</code>, <code>li</code>, <code>table</code>, <code>tbody</code>, <code>tr</code>, <code>td</code>, …</p>
+
+    <h3>10.2 Unpaarige Elemente (Auszug)</h3>
+    <p><code>br</code>, <code>img</code>, <code>meta</code>, <code>link</code>, <code>input</code>, <code>hr</code>, <code>source</code>, <code>track</code>, <code>wbr</code>, …</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Typ</th>
+          <th>Beispiele</th>
+          <th>Inhalt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paarig</td>
+          <td><code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code></td>
+          <td>ja</td>
+        </tr>
+        <tr>
+          <td>Unpaarig</td>
+          <td><code>&lt;br&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;meta&gt;</code></td>
+          <td>nein</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>
